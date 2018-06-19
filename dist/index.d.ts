@@ -1,1 +1,1 @@
-export default function theme(styles: object): object;
+export default function themer(themes: any, useSheet?: boolean): object;
