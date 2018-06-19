@@ -14,11 +14,12 @@
     "react",
     "native"
   ],
-  "author": "Birkir Gudjonsson",
+  "author": "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "23.1.1",
     "jest": "23.1.0",
+    "react-native": "0.55.4",
     "ts-jest": "22.4.6",
     "typescript": "2.9.2"
   },
