@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export default function themer(themes: any, useSheet: boolean = true): object {
+export default function themer(themes: any, selectedTheme: any, useSheet: boolean = true): object {
 
   return function theme(styles: any) {
 
@@ -38,7 +38,7 @@ export default function themer(themes: any, useSheet: boolean = true): object {
       // classNames?
     };
 
-    (themeSolver as any).theme = undefined;
+    (themeSolver as any).theme = selectedTheme;
 
     const sheet = useSheet ? StyleSheet.create(cache) : cache;
 

@@ -24,7 +24,7 @@ const themes = {
   },
 };
 
-const theme = themer(themes, false) as any;
+const theme = themer(themes, undefined, false) as any;
 
 test('uninterrupted results', () => {
   const styles = {
@@ -118,7 +118,7 @@ test('default value', () => {
 });
 
 test('StyleSheet', () => {
-  const theme = themer(themes, true) as any;
+  const theme = themer(themes, undefined, true) as any;
   const styles = {
     sample: {
       fontSize: 12,
@@ -136,4 +136,17 @@ test('StyleSheet', () => {
   expect(s.sample).toHaveLength(2);
   expect(s.sample[0]).toBe(0);
   expect(s.sample[1]).toBe(2);
+});
+
+test('default theme', () => {
+  const theme = themer(themes, 'light', false) as any;
+  const styles = {
+    sample: {
+      fontSize: 12,
+      color: 'var(--primary-color)',
+    },
+  };
+  const s = theme(styles);
+  expect(s.sample).toHaveLength(2);
+  expect(s.sample[1].color).toBe('#123456');
 })

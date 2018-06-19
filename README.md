@@ -1,7 +1,42 @@
 react-native-css-modules-theme
 ==============================
 
-Example
+## API
+
+```js
+import theme from 'react-native-css-modules-themes';
+
+theme(
+  /**
+   * Variables as object of objects.
+   *
+   * example: {
+   *   light: {
+   *     '--my-var': 'blue',
+   *   },
+   * }
+   * 
+   * or direct file of css files like:
+   * 
+   * .light {
+   *   --my-var: blue;
+   * }
+   */
+  themeVariables: object, // (required)
+
+  /**
+   * Selected theme or computed property like mobx observable value
+   */
+  theme: string | observable | any, // default undefined
+
+  /**
+   * Wether to return a StyleSheet.create or javascript object.
+   */
+  useStyleSheet: boolean; // default true
+)
+```
+
+## Example
 
 ```jsx
 import theme from 'react-native-css-modules-themes';
