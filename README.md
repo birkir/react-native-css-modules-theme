@@ -10,7 +10,13 @@ const themes = require('./themes.css');
 const withTheme = theme(themes);
 const styles = withTheme(require('./Button.css'));
 
+styles.theme = 'dark';
+
 export default () => <View style={styles.button} />;
+
+// Will output:
+//
+// <View style={[{ fontSize: 12 }, { color: 'black' }]} />
 ```
 
 ```styl
@@ -24,6 +30,7 @@ export default () => <View style={styles.button} />;
 
 // Button.css
 .button {
+  font-size: 12px;
   background-color: var(--primary-color);
 }
 ```
